@@ -1,0 +1,9 @@
+matplotlib
+pandas
+librosa
+numpy
+torch 
+torchvision 
+torchaudio
+IPython
+pyyaml

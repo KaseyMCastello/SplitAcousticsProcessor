@@ -10,11 +10,7 @@ any input UDP stream
 
 import os
 import yaml
-import torch
 import threading
-import struct
-import socket
-import time
 from datetime import datetime, timedelta
 
 from BufferMaster import BufferMaster
@@ -26,10 +22,7 @@ from Listener import Listener
 with open('config.yaml', 'r') as file:
     config = yaml.safe_load(file)
 
-wav_file_path = ''
 txt_file_path = config['txt_file_path']
-model_path = config['model_path']
-CalCOFI_flag = config['CalCOFI_flag']
 listen_address = config['listen_address']
 listen_port = config['listen_port']
 sample_rate = config['sample_rate']
@@ -60,8 +53,8 @@ buffer_master = BufferMaster( global_stop_event,max_duration_sec = (2 * window_s
 listener = Listener( global_stop_event, listen_address = listen_address, listen_port = listen_port, packet_size = packet_size, buffer_master = buffer_master, timeout_duration = udp_timeout)
 
 # === Make Inferencer ===
-bfw = BFWInferencer( buffer_master = buffer_master, duration_ms = window_size_sec * 1000, model_path = model_path, stop_event= global_stop_event,
-    sample_rate = sample_rate, bytes_per_sample = bytes_per_sample, channels = channels, CalCOFI_flag = CalCOFI_flag, output_file_path = txt_file_path,
+bfw = BFWInferencer( buffer_master = buffer_master, duration_ms = window_size_sec * 1000, model_path = r'C:\Users\kasey\Desktop\WhaleMoanDetector_12_11_24_12_best.pth', stop_event= global_stop_event,
+    sample_rate = sample_rate, bytes_per_sample = bytes_per_sample, channels = channels, CalCOFI_flag = False, output_file_path = txt_file_path,
     file_output_bool = True )
 
 sp = SPICEInferencer( buffer_master = buffer_master, duration_ms=10, model_path= "", stop_event= global_stop_event)

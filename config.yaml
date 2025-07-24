@@ -1,10 +1,6 @@
 # Configuration file to run WhaleMoanDetector and modify file paths
-#Michaela Alksne
 # define file paths:
-wav_directory: ''
 txt_file_path: 'C:\Users\kasey\Desktop\TimingTestSimUDP2\output.txt'
-model_path: 'C:\Users\kasey\Desktop\WhaleMoanDetector_12_11_24_12_best.pth'
-CalCOFI_flag: False # True or False
 listen_address: '127.0.0.1'
 listen_port: 5005
 #Datastream Firmware parameters
