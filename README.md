@@ -68,3 +68,4 @@ class NewInferencer(InferencerShell):
         #Deteremine how packets should be handled for this class of inferencer    
 ```
 Make sure your new inferencer is also included in the start() and stop() logic in runRTPredictions.py. When run, it should come up like this: 
+<img width="1505" height="800" alt="intro" src="https://github.com/user-attachments/assets/86345e17-4c53-4d90-aadd-702edbeba08b" />
