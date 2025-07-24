@@ -1,0 +1,17 @@
+# Configuration file to run WhaleMoanDetector and modify file paths
+#Michaela Alksne
+# define file paths:
+wav_directory: ''
+txt_file_path: 'C:\Users\kasey\Desktop\TimingTestSimUDP2\output.txt'
+model_path: 'C:\Users\kasey\Desktop\WhaleMoanDetector_12_11_24_12_best.pth'
+CalCOFI_flag: False # True or False
+listen_address: '127.0.0.1'
+listen_port: 5005
+#Datastream Firmware parameters
+sample_rate: 200000  # e.g. 200 kHz – adjust as needed
+bytes_per_sample: 2 #bytes in one acoustic sample
+channels: 1 #number of channels in the audio stream
+samples_per_packet: 248 #number of samples in one packet
+packet_rate: 1.240 #number of ms per packet
+header_size: 12
+
